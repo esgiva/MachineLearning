@@ -156,7 +156,7 @@ los modelos locales como fallback, siempre que los archivos `.pkl` estén en la 
    - Haz clic en el botón de predicción
    - Visualiza los resultados
 
-## 📊 Modelos Incluidos
+##  Modelos Incluidos
 
 ### Regresión Logística
 - **Input**: Variables del dataset Telco Customer Churn
@@ -191,7 +191,7 @@ Endpoints disponibles:
 
 Cada endpoint recibe un JSON con los campos del formulario y devuelve las métricas que consume el frontend de Streamlit.
 
-## 📓 Notebooks de Análisis
+##  Notebooks de Análisis
 
 El proyecto incluye notebooks completos en la carpeta `notebooks/`:
 
