@@ -83,7 +83,7 @@ Parcial3/
 ## 🎯 Uso de la Aplicación Web
 
 ### 1. Backend (ejecución local opcional)
-El frontend consume un backend HTTP desplegado en Railway (`https://machinelearning-production-a471.up.railway.app`).  
+El frontend consume un backend HTTP desplegado en Render (`https://machinelearning-af44.onrender.com`).  
 Si deseas ejecutar el backend localmente:
 
 ```bash
@@ -97,7 +97,7 @@ set API_BASE_URL=http://localhost:8000   # Windows PowerShell
 export API_BASE_URL=http://localhost:8000  # macOS / Linux
 ```
 
-Si no defines `API_BASE_URL`, el frontend intentará utilizar el backend desplegado en Railway.  
+Si no defines `API_BASE_URL`, el frontend intentará utilizar el backend desplegado en Render.  
 En caso de que dicho backend remoto no esté disponible, la aplicación utilizará automáticamente
 los modelos locales como fallback, siempre que los archivos `.pkl` estén en la carpeta `modelos/`.
 
@@ -180,7 +180,7 @@ los modelos locales como fallback, siempre que los archivos `.pkl` estén en la 
 El backend expone los modelos mediante FastAPI en el dominio:
 
 ```
-https://machinelearning-production-074b.up.railway.app
+https://machinelearning-af44.onrender.com
 ```
 
 Endpoints disponibles:
@@ -232,7 +232,7 @@ El proyecto incluye notebooks completos en la carpeta `notebooks/`:
 
 ### Error: "No se pudo conectar con el backend"
 - Verifica que `API_BASE_URL` apunte al dominio correcto o que el backend local esté ejecutándose
-- Comprueba tu conexión a internet si estás usando el backend en Railway
+- Comprueba tu conexión a internet si estás usando el backend en Render
 
 ### Error: "No se encontraron los archivos del modelo"
 - Verifica que los archivos `.pkl` estén en la carpeta `modelos/`

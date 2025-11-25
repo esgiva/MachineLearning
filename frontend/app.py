@@ -401,7 +401,7 @@ st.markdown("""
 </script>
 """, unsafe_allow_html=True)
 
-API_BASE_URL = os.getenv("API_BASE_URL", "https://machinelearning-production-a471.up.railway.app")
+API_BASE_URL = os.getenv("API_BASE_URL", "https://machinelearning-af44.onrender.com")
 
 
 def call_backend(
