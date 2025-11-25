@@ -2,7 +2,7 @@
 
 Este proyecto contiene modelos de Machine Learning entrenados para clasificación (Regresión Logística y KNN) y clustering (K-Means), junto con una aplicación web interactiva para realizar predicciones.
 
-## 📋 Descripción del Proyecto
+##  Descripción del Proyecto
 
 El proyecto incluye:
 
@@ -15,7 +15,7 @@ El proyecto incluye:
 
 3. **Aplicación Web** - Interfaz interactiva para probar los modelos
 
-## 🚀 Instalación
+##  Instalación
 
 ### Requisitos Previos
 
@@ -48,7 +48,7 @@ El proyecto incluye:
    pip install -r requirements.txt
    ```
 
-## 📁 Estructura del Proyecto
+##  Estructura del Proyecto
 
 ```
 Parcial3/
@@ -80,7 +80,7 @@ Parcial3/
     └── 03_KMeans.ipynb
 ```
 
-## 🎯 Uso de la Aplicación Web
+##  Uso de la Aplicación Web
 
 ### 1. Backend (ejecución local opcional)
 El frontend consume un backend HTTP desplegado en Render (`https://machinelearning-af44.onrender.com`).  
@@ -175,7 +175,7 @@ los modelos locales como fallback, siempre que los archivos `.pkl` estén en la 
   - Número del cluster asignado
   - Descripción del perfil del cluster
 
-## 🌐 Arquitectura y Endpoints
+##  Arquitectura y Endpoints
 
 El backend expone los modelos mediante FastAPI en el dominio:
 
@@ -217,7 +217,7 @@ El proyecto incluye notebooks completos en la carpeta `notebooks/`:
   - Visualizaciones con PCA
   - Aplicaciones reales
 
-## 📝 Notas Importantes
+##  Notas Importantes
 
 - Los modelos deben estar entrenados previamente y guardados como archivos `.pkl`
 - Los modelos `logreg_model.pkl` y `knn_model.pkl` ya incluyen el preprocesador dentro (son Pipelines)
@@ -247,25 +247,23 @@ El proyecto incluye notebooks completos en la carpeta `notebooks/`:
 - Verifica que los datos de entrada tengan el formato correcto
 - Asegúrate de usar scikit-learn versión 1.6.1 (especificada en requirements.txt)
 
-## 🗂️ Archivos del Repositorio
+##  Archivos del Repositorio
 
 ### Estructura para GitHub:
-- ✅ Carpeta `/modelos` con los archivos `.pkl`
-- ✅ Código de la web en `/frontend` y `/backend`
-- ✅ README con instrucciones claras
-- ✅ `requirements.txt` con todas las dependencias
-- ✅ Notebooks limpios en `/notebooks` con:
+-  Carpeta `/modelos` con los archivos `.pkl`
+-  Código de la web en `/frontend` y `/backend`
+-  README con instrucciones claras
+-  `requirements.txt` con todas las dependencias
+-  Notebooks limpios en `/notebooks` con:
   - Preprocesamiento
   - Entrenamiento
   - Resultados
   - Métricas
   - Gráficas
 
-## 👥 Autores
+##  Autores
 
-[Tu nombre/equipo]
-
-## 📄 Licencia
-
-[Especificar licencia si aplica]
+- Juan Camilo Grajales Lasso
+- Isabela Giraldo Vargas
+- Maria Camila Espinosa Flores
 
