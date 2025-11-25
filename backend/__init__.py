@@ -2,8 +2,8 @@
 Backend del proyecto - Lógica de modelos y predicciones.
 """
 
-from model_loader import load_model, load_preprocessor, model_exists
-from predictors import (
+from .model_loader import load_model, load_preprocessor, model_exists
+from .predictors import (
     predict_logistic_regression,
     predict_knn,
     predict_kmeans,
