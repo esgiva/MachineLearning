@@ -7,7 +7,7 @@ consuma los modelos a través de peticiones POST.
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field
 
-from backend.predictors import (
+from predictors import (
     predict_logistic_regression,
     predict_knn,
     predict_kmeans,

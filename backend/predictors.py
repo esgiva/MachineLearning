@@ -4,7 +4,7 @@ Módulo con funciones de predicción para cada modelo.
 
 import pandas as pd
 import numpy as np
-from backend.model_loader import load_model, load_preprocessor, model_exists
+from model_loader import load_model, load_preprocessor, model_exists
 
 
 def predict_logistic_regression(input_data):
