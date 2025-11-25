@@ -1301,6 +1301,60 @@ else:  # K-Means
         # Descripción del perfil del cluster
         st.markdown("### 📋 Perfil del Cluster")
         
+        # Interpretaciones reales de los clusters
+        cluster_interpretations = {
+            0: """
+            <h4 style="margin-top: 0; color: {color}; font-size: 1.3rem;">Cluster 0 – Clientes de alto valor</h4>
+            <ul style="color: #2c3e50; line-height: 1.8; margin: 0.5rem 0;">
+                <li>Altas compras y frecuencias de compra.</li>
+                <li>Mayor límite de crédito.</li>
+                <li>Más transacciones.</li>
+                <li>Más pagos completos.</li>
+                <li>Bajo uso de cash advance.</li>
+            </ul>
+            <p style="margin: 0.5rem 0 0 0; color: #27ae60; font-weight: bold;">
+                → Clientes rentables, activos y de bajo riesgo.
+            </p>
+            """,
+            1: """
+            <h4 style="margin-top: 0; color: {color}; font-size: 1.3rem;">Cluster 1 – Clientes de bajo uso y más riesgo</h4>
+            <ul style="color: #2c3e50; line-height: 1.8; margin: 0.5rem 0;">
+                <li>Pocas compras.</li>
+                <li>Poco uso de la tarjeta.</li>
+                <li>Más uso de cash advance.</li>
+                <li>Límites más bajos.</li>
+                <li>Menor probabilidad de pago total.</li>
+            </ul>
+            <p style="margin: 0.5rem 0 0 0; color: #e74c3c; font-weight: bold;">
+                → Clientes menos valiosos y con riesgo financiero más alto.
+            </p>
+            """,
+            2: """
+            <h4 style="margin-top: 0; color: {color}; font-size: 1.3rem;">Cluster 2 – Clientes intermedios</h4>
+            <ul style="color: #2c3e50; line-height: 1.8; margin: 0.5rem 0;">
+                <li>Compras moderadas.</li>
+                <li>Uso regular de la tarjeta.</li>
+                <li>Límite de crédito medio.</li>
+                <li>Pagos parciales frecuentes.</li>
+            </ul>
+            <p style="margin: 0.5rem 0 0 0; color: #f39c12; font-weight: bold;">
+                → Clientes con potencial de crecimiento.
+            </p>
+            """,
+            3: """
+            <h4 style="margin-top: 0; color: {color}; font-size: 1.3rem;">Cluster 3 – Clientes nuevos o inactivos</h4>
+            <ul style="color: #2c3e50; line-height: 1.8; margin: 0.5rem 0;">
+                <li>Bajo historial de transacciones.</li>
+                <li>Límite de crédito inicial.</li>
+                <li>Pocos pagos registrados.</li>
+                <li>Uso limitado de servicios.</li>
+            </ul>
+            <p style="margin: 0.5rem 0 0 0; color: #3498db; font-weight: bold;">
+                → Clientes que requieren seguimiento y activación.
+            </p>
+            """
+        }
+        
         if result['profile']:
             st.markdown(f"""
             <div class="info-section">
@@ -1313,14 +1367,17 @@ else:  # K-Means
             </div>
             """, unsafe_allow_html=True)
         else:
+            # Mostrar interpretación según el número de cluster
+            interpretation = cluster_interpretations.get(cluster_num, f"""
+            <h4 style="margin-top: 0; color: {color}; font-size: 1.3rem;">Cluster {cluster_num}</h4>
+            <p style="margin: 0; color: #2c3e50;">
+                Este cluster representa un grupo de clientes con características similares.
+            </p>
+            """)
+            
             st.markdown(f"""
             <div class="info-section">
-                <h4 style="margin-top: 0;">Cluster {cluster_num}</h4>
-                <p style="margin: 0; color: #2c3e50;">
-                    Este cluster representa un grupo de clientes con características similares.
-                    Para obtener una descripción detallada del perfil, asegúrate de incluir
-                    el archivo 'cluster_profiles.pkl' con las descripciones precalculadas.
-                </p>
+                {interpretation.format(color=color)}
             </div>
             """, unsafe_allow_html=True)
 
