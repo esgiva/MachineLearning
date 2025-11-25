@@ -1298,6 +1298,22 @@ else:  # K-Means
             </div>
             """, unsafe_allow_html=True)
         
+        # Panel de información de debug (colapsable)
+        with st.expander("ℹ️ Información de los datos enviados"):
+            st.write("**Valores principales enviados al modelo:**")
+            col_debug1, col_debug2 = st.columns(2)
+            with col_debug1:
+                st.write(f"- Saldo: ${balance:,.2f}")
+                st.write(f"- Compras: ${purchases:,.2f}")
+                st.write(f"- Límite de crédito: ${credit_limit:,.2f}")
+                st.write(f"- Pagos: ${payments:,.2f}")
+            with col_debug2:
+                st.write(f"- Frecuencia de compras: {purchases_frequency:.2f}")
+                st.write(f"- Transacciones: {purchases_trx}")
+                st.write(f"- Adelantos: ${cash_advance:,.2f}")
+                st.write(f"- Tiempo: {tenure} meses")
+            st.info(f"**Cluster predicho:** {cluster_num} | **Distancia al centroide:** {result['distance_to_centroid']:.4f}")
+        
         # Descripción del perfil del cluster
         st.markdown("### 📋 Perfil del Cluster")
         

@@ -107,8 +107,25 @@ def predict_kmeans(input_data):
     if model is None or preprocessor is None:
         raise FileNotFoundError("No se encontraron el modelo o el preprocesador de K-Means")
     
-    # Convertir input_data a DataFrame
-    df = pd.DataFrame([input_data])
+    # Definir el orden correcto de las columnas (según el preprocesador)
+    column_order = [
+        'BALANCE', 'BALANCE_FREQUENCY', 'PURCHASES', 'ONEOFF_PURCHASES',
+        'INSTALLMENTS_PURCHASES', 'CASH_ADVANCE', 'PURCHASES_FREQUENCY',
+        'ONEOFF_PURCHASES_FREQUENCY', 'PURCHASES_INSTALLMENTS_FREQUENCY',
+        'CASH_ADVANCE_FREQUENCY', 'CASH_ADVANCE_TRX', 'PURCHASES_TRX',
+        'CREDIT_LIMIT', 'PAYMENTS', 'MINIMUM_PAYMENTS', 'PRC_FULL_PAYMENT', 'TENURE'
+    ]
+    
+    # Convertir input_data a DataFrame con el orden correcto de columnas
+    df = pd.DataFrame([input_data], columns=column_order)
+    
+    # Asegurar que todas las columnas estén presentes
+    for col in column_order:
+        if col not in df.columns:
+            df[col] = 0.0
+    
+    # Reordenar columnas por si acaso
+    df = df[column_order]
     
     # Preprocesar datos
     processed_data = preprocessor.transform(df)
